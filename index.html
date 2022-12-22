@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO App</title>
+    <link rel="stylesheet" href="./assets/todo.css" />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <div class="todo-container">
+        <div class="todo-header">
+          <h1>TO-DO</h1>
+          <!-- toogle light/dark mode -->
+          <label class="switch">
+            <input id="mode" type="checkbox" checked onclick="toggleMode()" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="todo-create">
+          <input id="add-item" type="text" placeholder="Create a new todo..." />
+          <button id="add-item__btn">
+            <i class="fa-solid fa-plus fa-lg"></i>
+          </button>
+        </div>
+        <div id="todo-list">
+          <!-- <div class="todo-item">
+            aaaa
+            <button id="remove-item__btn" onclick="removeItemHandler(this)">
+              <i class="fa-solid fa-xmark fa-lg"></i>
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="./assets/todo.js"></script>
+    <script
+      src="https://kit.fontawesome.com/afd19b9f4f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

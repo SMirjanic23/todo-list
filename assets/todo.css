@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.6s ease, color 0.1s ease;
+}
+
+:root {
+  --background-dark: #161722;
+  --grey-text: #fafafa;
+  --element-dark: #25273c;
+  --background-light: #dadada;
+  --white-text: rgb(0, 0, 0);
+  --element-light: #f1f1f1;
+}
+
+/* .dark-mode {
+  --theme-mode: var(--background-dark);
+  --element-background: var(--element-dark);
+  --font-color: var(--grey-text);
+}
+
+.light-mode {
+  --theme-mode: var(--background-light);
+  --element-background: var(--element-light);
+  --font-color: var(--white-text);
+} */
+
+.dark-mode {
+  --theme-mode: var(--background-dark);
+  --element-background: var(--element-dark);
+  --font-color: var(--grey-text);
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent 30%, var(--theme-mode) 40%),
+    url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: auto;
+  background-position: center;
+  color: white;
+  font-family: monospace;
+}
+
+.light-mode {
+  --theme-mode: var(--background-light);
+  --element-background: var(--element-light);
+  --font-color: var(--white-text);
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent 30%, var(--theme-mode) 40%),
+    url('https://images.unsplash.com/photo-1507019582479-d2d2d925c66e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: auto;
+  background-position: center;
+  color: black;
+  font-family: monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-content: center;
+  width: 400px;
+  min-height: 500px;
+  /* border: 1px solid white; */
+  padding: 10px;
+  margin: 3%;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10%;
+  font-size: 2em;
+}
+
+.todo-create {
+  display: flex;
+  justify-content: baseline;
+  margin-bottom: 5%;
+}
+.todo-create input {
+  width: 100%;
+  min-height: 60px;
+  padding: 0 10px;
+  background-color: var(--element-background);
+  color: var(--font-color);
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 1.5em;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0;
+}
+
+.todo-list a {
+  width: 100%;
+}
+
+.todo-list p {
+  padding: 0 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--element-background);
+  color: var(--font-color);
+  min-height: 60px;
+  padding: 0 10px;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--font-color);
+}
+
+.card {
+  background-color: var(--element-background);
+  color: var(--font-color);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #505050;
+}
+
+#add-item__btn {
+  padding-right: 10px;
+  border: none;
+  background: var(--element-background);
+  cursor: pointer;
+  color: var(--font-color);
+}
+
+#remove-item__btn {
+  padding: 5% 0;
+  background: var(--element-background);
+  border: none;
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+/* light/dark mode switch */
+
+.switch {
+  position: relative;
+  display: flex;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: var(--font-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--background-dark);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
